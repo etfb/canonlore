@@ -1,0 +1,139 @@
+.multicol
+{
+  -webkit-column-width: 25em;
+     -moz-column-width: 25em;
+          column-width: 25em;
+  -webkit-column-gap: 3em;
+     -moz-column-gap: 3em;
+          column-gap: 3em;
+  -webkit-column-rule: 1px dotted #961312;
+     -moz-column-rule: 1px dotted #961312;
+          column-rule: 1px dotted #961312;
+}
+
+.list p
+{
+    text-indent: -2em;
+    margin: 0 0 0 2em;
+}
+
+.list a, .lined a, .summary a
+{ 
+    color: #600 !important;
+    font-weight: normal !important;
+}
+
+a.fixme
+{
+    font-size: 135%;
+    background: navy;
+    color: white !important;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 0 4px 4px;
+}
+
+a.fixme:hover,
+a.fixme:focus,
+a.fixme:active
+{
+    background: #961312;
+}
+
+table.lined
+{
+    width: 100%;
+}
+
+table.lined thead th
+{
+    border-bottom: solid 1px black;
+}
+
+table.lined tr:nth-child(even),
+div.list p:nth-child(even)
+{
+    background: #fdf2f2;
+}
+
+table.lined td,
+table.lined th
+{
+    padding: 0 1em;
+}
+
+tr.new td
+{
+    border-top: solid 1px black;
+}
+    
+table.summary
+{
+    margin-bottom: 2em;
+}
+
+table.summary th,
+table.lined th
+{
+    font-variant: small-caps;
+    font-weight: normal;
+    text-align: left;
+}
+
+table.summary tbody th 
+{
+    width: 20em;
+}
+
+table.dated .col-1
+{
+    text-align: right;
+    white-space: nowrap;
+}
+
+table th
+{
+    white-space: nowrap;
+}
+
+#tabs div
+{
+    font-size: 10pt;
+}
+
+a.canon-fixme
+{
+    color: navy !important;
+    text-shadow: 1px 1px 2px white, 1px 1px 2px maroon;
+}
+
+#canon-calendar
+{
+    width: 100%;
+    border-collapse: collapse;
+    border: solid 1px black;
+}
+
+#canon-calendar thead th
+{
+    text-align: center;
+    font-size: 150%;
+}
+    
+#canon-calendar tbody th
+{
+    text-align: center;
+    font-size: 125%;
+    border: solid 1px black;
+    border-bottom-width: 0;
+    width: 33.333%;
+}
+    
+#canon-calendar tbody td
+{
+    border: solid 1px black;
+    border-top-width: 0;
+    padding: 0.5em 1em;
+    height: 5em;
+    overflow: auto;
+}
