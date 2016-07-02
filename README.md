@@ -1,4 +1,4 @@
-# Canon Lore 2.0
+# Canon Lore 2.0: Database
 
 This is Canon Lore 2.0, a rewrite of the Canon Lore database currently in
 operation at http://lochac.sca.org/canon, for use as both an API for other
