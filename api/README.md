@@ -10,6 +10,29 @@ Gets information about people who have received Lochacian awards and/or lived in
 
 List all the relevant people.  Eventually, this will include filtering, but for now it's just a dump of all who aren't marked as banished or foreign royalty.
 
+#### Query
+    { aliases: STRING,
+      authorisation: STRING }
+
+* **aliases**: how to handle alternate names: 'inline' means a separate result row for every name and alias, with a link to the primary name; 'group' means an array of aliases included in result rows
+* **authorisation**: *(TODO)*  a token authorising the request to include extra personal information
+
+#### Result
+    [ { id: INT,
+        name: STRING,
+        mundane_name: STRING,
+        really: STRING,
+        aliases: [ STRING, ... ] },
+      ... ]
+
+For each person (and each alias, if query.aliases = 'inline'):
+
+* **[].id**: the person's ID
+* **[].name**: the persons' SCA name
+* **[].mundane_name**: *(if authorised)* the person's mundane name
+* **[].really**: *(if query.aliases = 'inline')* the person's primary name, if this is an alias
+* **[].aliases[]**: *(if query.aliases = 'group')* the list of aliases for this person
+
 ### /person/info
 
 List the names and other personal information about a specific person.
@@ -23,6 +46,7 @@ List the names and other personal information about a specific person.
 
 #### Result
     { name: STRING,
+      aliases: [ STRING, ... ],
       branch: { id: INT,
                 name: STRING,
                 type: STRING },
@@ -30,6 +54,7 @@ List the names and other personal information about a specific person.
       tracking: STRING }
 
 * **name**: the person's primary SCA name
+* **aliases[]**: the list of aliases for the person
 * **branch.id**: the ID number of the person's home branch
 * **branch.name**: the name of the person's home branch
 * **branch.type**: the type of the branch: 'Canton', 'College', 'Shire', 'Barony', 'Crown Principality', 'Principality', 'Kingdom', 'Region', 'Hamlet', 'Stronghold', 'Port', 'Palatine Barony'
